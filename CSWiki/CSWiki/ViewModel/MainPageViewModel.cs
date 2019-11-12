@@ -19,7 +19,6 @@ namespace CSWiki.ViewModel
             get
             {
                 return this.searchText;
-
             }
             set
             {
