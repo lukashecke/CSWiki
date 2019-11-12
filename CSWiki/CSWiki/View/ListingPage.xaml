@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CSWiki"
+             x:Class="CSWiki.ListingPage"
+             NavigationPage.HasNavigationBar="false">
+    <StackLayout Orientation="Vertical">
+        <ListView x:Name="PART_ListView"
+                  ItemsSource="{Binding Queries}"
+                  SeparatorColor="White"
+                  ItemTapped="PART_ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <OnIdiom x:TypeArguments="Grid">
+                            <OnIdiom.Phone>
+                                <Grid>
+                                    <Label
+                                Text="{Binding query}"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                FontSize="Large">
+                                    </Label>
+                                </Grid>
+                            </OnIdiom.Phone>
+                            <OnIdiom.Tablet>
+                                <Grid>
+                                    <Label
+                                Text="{Binding description}"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                FontSize="Large">
+                                    </Label>
+                                </Grid>
+                            </OnIdiom.Tablet>
+                        </OnIdiom>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

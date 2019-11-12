@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:CSWiki.View"
+            x:Class="CSWiki.EntryPage"
+            NavigationPage.HasNavigationBar="false"
+            BarBackgroundColor="Black">
+
+    <local:DescriptionPage BindingContext="{Binding Model.description}"/>
+    <local:ExamplePage BindingContext="{Binding Model.example}"/>
+    <local:InformationPage BindingContext="{Binding Model.information}"/>
+    <!-- Icons eventuell einsetzen: Icon="description" Icon="example" Icon="information"-->
+</TabbedPage>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CSWiki"
+             x:Class="CSWiki.MainPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="{Binding Farbe}">
+    <StackLayout Padding="0">
+    <Grid x:Name="MainGridVertical"
+          ColumnSpacing="0"
+          RowSpacing="0"
+          IsVisible="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!--Hier Auto fürs Bild nicht kompatibel?!-->
+            <RowDefinition Height="3.5*"/> <!--image-->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/> <!--searchbar-->
+            <RowDefinition Height=".5*"/>
+            <RowDefinition Height="Auto"/> <!--sleep-->
+            <RowDefinition Height="Auto"/> <!--list-->
+            <RowDefinition Height="Auto"/> <!--exit-->
+            <RowDefinition Height="Auto"/> <!--color-->
+            <RowDefinition Height="Auto"/> <!--colorhex-->
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/> <!--footer-->
+            </Grid.RowDefinitions>
+        <Image Grid.Column="2"
+               Grid.Row="1"
+               Aspect="AspectFit"             
+               Source="cs"/>
+        <SearchBar x:Name="SearchBar"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   Placeholder="Suche..." 
+                   BackgroundColor="White"
+                   SearchCommand="{Binding SearchCommand}" 
+                   SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}"
+                   Text="{Binding SearchText}"/>
+         <Button  Text="Schlafen"
+                 Command="{Binding PictureCommand}"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="6"/>
+        <Button  Text="Auflisten"
+                 Command="{Binding ListCommand}"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="5"/>
+        <Button  Text="Schließen"
+                 Pressed="Button_Pressed"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="7"/>
+        <Button  Text="Hintergrundfarbe"
+                 Command="{Binding ColorCommand}"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="8"/>
+        <Label  Text="{Binding FarbText}"
+                HorizontalOptions="Center"
+                TextColor="White"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="9"/>
+        <Label  Text="© 2019 Lukas Hecke"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                TextColor="White"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Grid.Row="11"/>
+    </Grid>
+    <Grid x:Name="MainGridHorizontal"
+          ColumnSpacing="0"
+          RowSpacing="0"
+          IsVisible="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0"
+               Grid.Row="1"
+               Grid.RowSpan="6"
+               Aspect="AspectFit"            
+               Source="cs"/>
+        <SearchBar Grid.Column="1"
+                   Grid.Row="1"
+                   Placeholder="Suche..." 
+                   BackgroundColor="White"
+                   SearchCommand="{Binding SearchCommand}" 
+                   SearchCommandParameter="{Binding Source={x:Reference SearchBar}, Path=Text}"
+                   Text="{Binding SearchText}"/>
+        <Button  Text="Auflisten"
+                 Command="{Binding ListCommand}"
+                 Grid.Column="1"
+                 Grid.Row="3"/>
+        <Button  Text="Schließen"
+                 Pressed="Button_Pressed"
+                 Grid.Column="1"
+                 Grid.Row="4"/>
+        <Button  Text="Hintergrundfarbe"
+                 Command="{Binding ColorCommand}"
+                 Grid.Column="1"
+                 Grid.Row="5"/>
+            <Label  Text="{Binding FarbText}"
+                HorizontalOptions="Center"
+                TextColor="White"
+                Grid.Column="1"
+                Grid.Row="6"/>
+            <Label  Text="© 2019 Lukas Hecke"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                TextColor="White"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="8"/>
+    </Grid>
+    </StackLayout>
+</ContentPage>

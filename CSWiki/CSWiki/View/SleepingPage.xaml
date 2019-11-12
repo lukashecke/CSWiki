@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSWiki.SleepingPage"
+             NavigationPage.HasNavigationBar="false">
+    <StackLayout>
+        <!--1440 x 2560 pixels, 16:9 ratio (~577 ppi density) for my Samsung Galaxy S6-->
+        <Button Command="{Binding HomeCommand}"
+                    BackgroundColor="Black"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentPage>
