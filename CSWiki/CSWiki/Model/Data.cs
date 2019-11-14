@@ -41,6 +41,12 @@ namespace CSWiki.Model
                 "example",
                 "-\tinformation\r\n\r\n");
              * */
+            
+            this.InsertDataRow(dataTable,
+               "Boxing",
+               "Beim Boxing handelt es sich um die Konvertierung eines Werttyps (primitiver Datentyp) in den Typ object oder in einen beliebigen anderen Schnittstellentyp, der durch diesen Werttyp implementiert wird. Wenn die CLR für einen Werttyp das Boxing durchführt, wird der Wert mit einer System.Object-Instanz umschlossen und im verwalteten Heap gespeichert. Durch Unboxing wird der Werttyp aus dem Objekt extrahiert. Boxing ist implizit, Unboxing ist explizit. Das Konzept von Boxing und Unboxing unterliegt der einheitlichen C#-Ansicht des Typsystems, in dem ein Wert eines beliebigen Typs als Objekt behandelt werden kann.",
+               "// The following line boxes i.\r\nint i = 123;\r\nobject o = i;\n\n// unboxing\r\no = 123;\r\ni = (int)o;",
+               "Im Verhältnis zu einfachen Zuweisungen sind Boxing und Unboxing rechentechnisch aufwändige Prozesse. Wenn ein Werttyp mittels Boxing konvertiert wird, muss ein neues Objekt zugeordnet und erstellt werden. Die für Unboxing erforderliche Umwandlung ist ebenfalls, jedoch in geringerem Maße rechentechnisch aufwändig. Weitere Informationen finden Sie unter Leistung.");
             this.InsertDataRow(dataTable,
                "Exeptionlogging",
                "In den meisten Fällen fängst du einen Fehler, also programmierst ein try/catch, erstellst anschließend einen Log-Eintrag, der protokolliert, dass ein Fehler aufgetreten ist, und wirfst dann den Fehler erneut. Die alte Exception wird somit als InnerException mitgegeben, wodurch man die Stack Trace Eigenschaft mit genaueren Informationen über den fehler und den Call Stack erhält. Das hilft bei der Fehlersuche!",
