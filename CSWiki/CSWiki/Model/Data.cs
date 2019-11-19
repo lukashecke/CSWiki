@@ -42,6 +42,11 @@ namespace CSWiki.Model
                 "-\tinformation\r\n\r\n");
              * */
             this.InsertDataRow(dataTable,
+               "Where",
+               "In einer generischen Typdefinition wird die where-Klausel verwendet, um Einschränkungen für Typen anzugeben, die als Argumente für einen Typenparameter in generischen Typen, Methoden, Delegaten oder lokalen Funktionen verwendet werden können.",
+               "public class SortedTrashContainer<T> where T : IComparable<T> { }",
+               "In unserem Beispiel muss der Datentyp T mindestens das Inteface IComparable implementieren. Durch dass Interface IComparable wird übrigens die CompareTo-Methode ermöglicht");
+            this.InsertDataRow(dataTable,
                "Collections",
                "Auflistungen (o.a. Collections) dind quasi automatisch verwaltete und flexible Arrays. Sie ermöglichen ein flexibleres Arbeiten mit Objektgruppen. Im Gegensatz zu Arrays kann sich die Gruppe von Objekten, mit denen Sie arbeiten, in Abhängigkeit von den sich ändernden Anforderungen der Anwendung dynamisch vergrößern bzw. verkleinern.",
                "// Einige gängige Collections\nList<T>\nSortedList<TKey,TValue>\n// Sortiert automatisch nach Key. Mit ContainsKey() lässt sich extrem schnell suchen (binary search!)\n// Bei hinzufügen in eine SortedList immer erst auf en Key prüfen!!!\nDictionary<TKey,TValue>\n//Dictionary funktioniert ähnlich einer SortedList bloß noch schneller und ist ein generische Hashtable. Zusätzlich gehasht und nicht sortiert.\nSortedDictionary<TKey,TValue>\nSchnell UND sortiert!\nHashSet<T>\n//Verwendet wenn eindeuteutige Werte und keine Schlüssel benötigt.\n//Wenn ein bereits exestierendes Hash hinzugefügt wird passiert nichts\nGibt es auch wieder als sorted Variante\n//Extrem schnell, aber nicht so schnell wie direkter Zugriff auf Array\n\n// Im Folgenden wird mit einer dieser Collections gearbeitet\n// Create a list of strings.\r\nvar salmons = new List<string>();\r\nsalmons.Add(\"chinook\");\r\nsalmons.Add(\"coho\");\r\nsalmons.Add(\"pink\");\r\nsalmons.Add(\"sockeye\");\r\n\r\n// Iterate through the list.\r\nforeach (var salmon in salmons)\r\n{\r\n    Console.Write(salmon + \" \");\r\n}\r\n// Output: chinook coho pink sockeye",
