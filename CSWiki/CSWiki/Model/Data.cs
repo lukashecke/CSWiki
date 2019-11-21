@@ -42,6 +42,11 @@ namespace CSWiki.Model
                 "-\tinformation\r\n\r\n");
              * */
             this.InsertDataRow(dataTable,
+               "Test",
+               "Test",
+               "Test",
+               "Test");
+            this.InsertDataRow(dataTable,
                "Where",
                "In einer generischen Typdefinition wird die where-Klausel verwendet, um Einschränkungen für Typen anzugeben, die als Argumente für einen Typenparameter in generischen Typen, Methoden, Delegaten oder lokalen Funktionen verwendet werden können.",
                "public class SortedTrashContainer<T> where T : IComparable<T> { }",
